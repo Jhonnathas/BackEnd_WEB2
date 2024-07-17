@@ -1,2 +1,2 @@
 # BackEnd_WEB2
-Repósitório para o BackEnd do projeto da disciplina de Programação Web 2. Ainda não definir sobre o que vai ser o projeto.
+Repósitório para o BackEnd do projeto da disciplina de Programação Web 2. Minha ideia inicial é que o projeto seja um site onde os usuários possam fazer reviews de jogos, ler reviews que outros usuários fizeram, dar uma nota para as reviews de outros usúarios, editar suas reviews, adicionar imagens e vídeos nas reviews etc. Todas essas funções só estarão disponíveis para usuários cadastrados, exceto a função de ler as reviews. As reviews aparecerão por ordem de relevância para os usuários que querem ler.
