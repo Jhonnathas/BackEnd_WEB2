@@ -27,4 +27,8 @@ model Jogo{
 
 model Usuario{
   id String @id @default(uuid())
+  nome String @unique
+  carisma String
+  email String @unique
+  telefone String @unique
 }
