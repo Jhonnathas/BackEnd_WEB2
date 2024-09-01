@@ -31,4 +31,37 @@ model Usuario{
   carisma String
   email String @unique
   telefone String @unique
+  historicoReviews String
+}
+
+model Administrador{
+  idADM Int @id @default(autoincrement())
+  nome String @unique
+}
+
+model Review {
+  idReview String @id @default(uuid())
+  titulo String 
+  nota Float
+  notaGrafico Float
+  notaJogabilidade FloatnotaHistoria Float
+  idJogo1 Int
+  id1 String
+  texto String
+  cutidas Int
+  user User1 @relation (fields: [idJogo1, id1], references: [idJogo, id])
+}
+
+model Comentario {
+  idComentario @id @default(uuid())
+  textoComentario String
+  idReview1 String 
+  user User2 @relation (fields: [idReview1], references: [idReview])
+}
+
+model Curtida{
+  idCurtida @id @default(uuid())
+  id2 String
+  idReview2 String
+  user User3 @relation (fields: [id2, idReview2], references: [id, idReview])
 }
