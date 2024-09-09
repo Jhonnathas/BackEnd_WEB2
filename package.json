@@ -13,6 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "@prisma/client": "^5.17.0",
+    "backend_web2": "file:",
     "express": "^4.19.2"
   },
   "devDependencies": {
