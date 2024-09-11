@@ -1,12 +1,23 @@
-export class Usuario {
-    nome: string;
-    email: string;
-    idade: number;
+import { Review } from "./Review";
 
-    constructor(nome: string, email: string, idade: number) {
+export class Usuario {
+    id: string;
+    nome: string;
+    carisma: string;
+    email: string;
+    telefone: number;
+    idade: number;
+    historicoReviews: Review;
+
+    constructor(id: string, nome: string, carisma: string, email: string,
+        telefone: number, idade: number, historicoReviews: Review) {
+        this.id = id;
         this.nome = nome;
+        this.carisma = carisma;
         this.email = email;
+        this.telefone = telefone;
         this.idade = idade;
+        this.historicoReviews = historicoReviews;
     }
 
     exibirInformacoes(): void {
