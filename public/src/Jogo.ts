@@ -31,7 +31,7 @@ export class Jogo {
     }
 
     calculaMedia(): void {
-        this.media = this.mediaJogabilidade * 0.40 + this.mediaGraficos * 0.30 +this.mediaHistoria * 0.30;
+        this.media = this.mediaJogabilidade * 0.40 + this.mediaGraficos * 0.30 + this.mediaHistoria * 0.30;
     }
     
 }
