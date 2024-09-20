@@ -1,10 +1,10 @@
 import { Review } from "./Review";
 
 export class Comentario{
-    idComentario: number;
-    textoComentario: string;
-    idReview: string;
-    review: Review;
+    private idComentario: number;
+    private textoComentario: string;
+    private idReview: string;
+    private review: Review;
 
     constructor (idComentario: number, textoComentario: string, idReview: string,
         review: Review){

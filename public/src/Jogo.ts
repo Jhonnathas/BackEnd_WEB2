@@ -1,14 +1,14 @@
 export class Jogo {
-    idJogo: number;
-    nomeJogo: string;
-    categoria: string;
-    anoLancamento: number;
-    plataformas: string;
-    descricao: string;
-    media : number;
-    mediaJogabilidade: number;
-    mediaGraficos: number;
-    mediaHistoria: number;
+    private idJogo: number;
+    private nomeJogo: string;
+    private categoria: string;
+    private anoLancamento: number;
+    private plataformas: string;
+    private descricao: string;
+    private media : number;
+    private mediaJogabilidade: number;
+    private mediaGraficos: number;
+    private mediaHistoria: number;
 
     constructor(id: number, nome: string, genero: string, anoLancamento: number, 
         plataformas: string, descricao: string, media: number, mediaJogabilidade: number,
@@ -24,6 +24,10 @@ export class Jogo {
         this.mediaJogabilidade = mediaJogabilidade;
         this.mediaGraficos = mediaGraficos;
         this.mediaHistoria = mediaHistoria;
+    }
+
+    getID(): number {
+        return this.idJogo;
     }
 
     exibirDetalhes(): void {
