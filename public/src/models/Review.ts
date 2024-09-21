@@ -30,7 +30,7 @@ export class Review {
     }
 
     exibirReview(): void {
-        console.log(`Review do jogo ${this.jogo.nomeJogo} pelo usuário ${this.usuario.nome}`);
+        //console.log(`Review do jogo ${this.jogo.nomeJogo} pelo usuário ${this.usuario.nome}`);
         console.log(`Nota: ${this.nota}/10`);
         console.log(`Comentário: ${this.texto}`);
     }
