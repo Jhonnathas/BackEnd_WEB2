@@ -5,15 +5,14 @@ export class Jogo {
     private anoLancamento: number;
     private plataformas: string;
     private descricao: string;
-    private media : number;
-    private mediaJogabilidade: number;
-    private mediaGraficos: number;
-    private mediaHistoria: number;
+    private media: number;
+    private mediasRegistradas = new Map <string, number>(); 
+    //private mediaJogabilidade: number;
+    //private mediaGraficos: number;
+    //private mediaHistoria: number;
 
     constructor(id: number, nome: string, genero: string, anoLancamento: number, 
-        plataformas: string, descricao: string, media: number, mediaJogabilidade: number,
-        mediaGraficos: number, mediaHistoria: number
-    ) {
+        plataformas: string, descricao: string, media: number) {
         this.idJogo = id;
         this.nomeJogo = nome;
         this.categoria = genero;
@@ -21,9 +20,6 @@ export class Jogo {
         this.plataformas = plataformas;
         this.descricao = descricao;
         this.media = media;
-        this.mediaJogabilidade = mediaJogabilidade;
-        this.mediaGraficos = mediaGraficos;
-        this.mediaHistoria = mediaHistoria;
     }
 
     getID(): number {
@@ -34,8 +30,19 @@ export class Jogo {
         console.log(`Jogo: ${this.nomeJogo}, Gênero: ${this.categoria}, Ano de Lançamento: ${this.anoLancamento}`);
     }
 
-    calculaMedia(): void {
-        this.media = this.mediaJogabilidade * 0.40 + this.mediaGraficos * 0.30 + this.mediaHistoria * 0.30;
+    setMediaRegistradas(idU:string, mediaU:number): void {
+        this.mediasRegistradas.set(idU, mediaU);
+    }
+
+    calculaMediaGeral(): number {
+        let mediaGeral = 0;
+        for (let [key, value] of this.mediasRegistradas) {
+            mediaGeral += 1;
+          }
+        return mediaGeral;
     }
     
+    getNomeJogo(): string {
+        return this.nomeJogo;
+    }
 }

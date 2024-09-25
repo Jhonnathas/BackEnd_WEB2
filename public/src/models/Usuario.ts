@@ -30,6 +30,9 @@ export class Usuario {
         console.log(`Usuário: ${this.nome}, Email: ${this.email}, Idade: ${this.idade}`);
     }
 
+    getNomeU(): string {
+        return this.nome;
+    }
     /*curti(): void {
         const idReview = this.review.getID();
         this.curtida = new Curtida (this.getID(), idReview);
