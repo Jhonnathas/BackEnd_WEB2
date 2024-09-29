@@ -8,18 +8,18 @@ export class Usuario {
     private email: string;
     private telefone: number;
     private idade: number;
-    private historicoReviews: Review;
+    //private historicoReviews: Review;
     private review!: Review;
     private curtida!: Curtida;
 
     constructor(id: string, nome: string, email: string,
-        telefone: number, idade: number, historicoReviews: Review) {
+        telefone: number, idade: number) {
         this.id = id;
         this.nome = nome;
         this.email = email;
         this.telefone = telefone;
         this.idade = idade;
-        this.historicoReviews = historicoReviews;
+        //this.historicoReviews = historicoReviews;
     }
 
     getID(): string {

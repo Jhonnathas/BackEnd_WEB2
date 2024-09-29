@@ -55,4 +55,6 @@ export class Review {
         return this.media;
     }
 
+    editarReview(novoTitulo: string, )
+
 }
