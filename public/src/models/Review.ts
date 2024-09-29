@@ -6,40 +6,37 @@ export class Review {
     private jogo: Jogo;
     private usuario: Usuario;
     private titulo: string;
-    private nota: number;
     private notaGrafico: number;
     private notaJogabilidade: number;
     private notaHistoria: number;
     private texto: string;
-    private curtidas: number;
-    private mediaJogabilidade: number;
-    private mediaGraficos: number;
-    private mediaHistoria: number;
-    private media!: number
-    //comentario: string; vai ser uma entidade
-    
+    private media!: number;
+    //private const curtida! = new Map<string, string>();
 
-    constructor(idReview: string, jogo: Jogo, usuario: Usuario, titulo: string, 
-        nota: number, notaGrafico: number, notaJogabilidade: number, notaHistoria: number, 
-        texto: string, curtidas: number, jogabilidade: number, graficos: number, historia: number) {
+    constructor(idReview: string, jogo: Jogo, usuario: Usuario, titulo: string, notaGrafico: number,
+        notaJogabilidade: number, notaHistoria: number, texto: string) {
         this.idReview = idReview;
         this.jogo = jogo;
         this.usuario = usuario;
         this.titulo = titulo;
-        this.nota = nota;
         this.notaGrafico = notaGrafico;
         this.notaJogabilidade = notaJogabilidade;
         this.notaHistoria = notaHistoria;
         this.texto = texto;
-        this.curtidas = curtidas;
-        this.mediaJogabilidade = jogabilidade;
-        this.mediaGraficos = graficos;
-        this.mediaHistoria = historia;
+    }
+
+    editarReview(novoTitulo: string, novaNotaGrafico: number, novaNotaJogabilidade: number,
+        novaNotaHistoria: number, novoTexto: string): void {
+            this.titulo = novoTitulo;
+            this.notaGrafico = novaNotaGrafico;
+            this.notaJogabilidade = novaNotaJogabilidade;
+            this.notaHistoria = novaNotaHistoria;
+            this.texto = novoTexto;
     }
 
     exibirReview(): void {
         console.log(`Review do jogo ${this.jogo.getNomeJogo()} pelo usuário ${this.usuario.getNomeU()}`);
-        console.log(`Nota: ${this.nota}/10`);
+        console.log(`Nota: ${this.media}/10`);
         console.log(`Comentário: ${this.texto}`);
     }
 
@@ -48,13 +45,11 @@ export class Review {
     }
 
     calculaMedia(): void {
-        this.media = this.mediaJogabilidade * 0.40 + this.mediaGraficos * 0.30 + this.mediaHistoria * 0.30;
+        this.media = this.notaJogabilidade * 0.40 + this.notaGrafico * 0.30 + this.notaHistoria * 0.30;
     }
 
     getMedia(): number {
         return this.media;
     }
-
-    editarReview(novoTitulo: string, )
 
 }

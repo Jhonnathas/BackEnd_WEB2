@@ -10,14 +10,14 @@ class ReviewController {
     
     // Método para criar uma nova review (POST)
     public createReview(req: Request, res: Response): Response {
-        const { idReview, jogo, usuario, titulo, nota, notaGrafico, notaJogabilidade, notaHistoria, texto, curtidas, jogabilidade, graficos, historia } = req.body;
+        const { idReview, jogo, usuario, titulo, notaGrafico, notaJogabilidade, notaHistoria, texto} = req.body;
 
         // Instanciando os objetos Jogo e Usuario (você provavelmente teria um serviço para buscá-los)
         const novoJogo = new Jogo(jogo.idJogo, jogo.nomeJogo, jogo.genero, jogo.anoLancamento, jogo.plataformas, jogo.descricao, jogo.media, jogo.desenvolvedor);
         const novoUsuario = new Usuario(usuario.id, usuario.nome, usuario.email, usuario.telefone, usuario.idade);
 
         // Criando a nova review
-        const newReview = new Review(idReview, novoJogo, novoUsuario, titulo, nota, notaGrafico, notaJogabilidade, notaHistoria, texto, curtidas, jogabilidade, graficos, historia);
+        const newReview = new Review(idReview, novoJogo, novoUsuario, titulo, notaGrafico, notaJogabilidade, notaHistoria, texto);
 
         // Calculando a média antes de salvar a review
         newReview.calculaMedia();
@@ -58,13 +58,13 @@ class ReviewController {
         }
 
         // Atualizando os campos da review
-        review.titulo = titulo || review.titulo;
+        /*review.titulo = titulo || review.titulo;
         review.texto = texto || review.texto;
         review.nota = nota || review.nota;
         review.notaGrafico = notaGrafico || review.notaGrafico;
         review.notaJogabilidade = notaJogabilidade || review.notaJogabilidade;
         review.notaHistoria = notaHistoria || review.notaHistoria;
-        review.curtidas = curtidas || review.curtidas;
+        review.curtidas = curtidas || review.curtidas;*/
 
         // Recalculando a média
         review.calculaMedia();

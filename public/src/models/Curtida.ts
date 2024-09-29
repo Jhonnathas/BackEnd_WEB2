@@ -10,7 +10,5 @@ export class Curtida {
     constructor(idUsuario: string, idReview: string) {
             this.idReview = idReview;
             this.idUsuario = idUsuario;
-            //this.review = review;
-            //this.usuario = usuario;
     }
 }
