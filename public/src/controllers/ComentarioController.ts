@@ -10,8 +10,7 @@ export class ComentarioController {
     static createComentario(req: Request, res: Response): Response {
         const { idComentario, textoComentario, idReview, idUsuario } = req.body;
 
-        // Aqui você poderia verificar se o Review existe no "banco de dados"
-       // const review = new Review(idReview); // Simulando um review para este exemplo
+        
         const novoComentario = new Comentario(idComentario, textoComentario, idReview, idUsuario);
         comentarios.push(novoComentario);
 

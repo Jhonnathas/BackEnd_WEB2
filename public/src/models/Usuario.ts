@@ -4,11 +4,9 @@ import { Review } from "./Review";
 export class Usuario {
     private id: string;
     private nome: string;
-    //private carisma!: number;
     private email: string;
     private telefone: number;
     private idade: number;
-    //private historicoReviews: Review;
     private review!: Review;
     private curtida!: Curtida;
 
@@ -19,7 +17,6 @@ export class Usuario {
         this.email = email;
         this.telefone = telefone;
         this.idade = idade;
-        //this.historicoReviews = historicoReviews;
     }
 
     getID(): string {
@@ -33,12 +30,4 @@ export class Usuario {
     getNomeU(): string {
         return this.nome;
     }
-    /*curti(): void {
-        const idReview = this.review.getID();
-        this.curtida = new Curtida (this.getID(), idReview);
-    }*/
-
-    /*setCarisma(carisma:string): void {
-        this.carisma = carisma;
-    }*/
 }

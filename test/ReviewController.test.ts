@@ -2,7 +2,7 @@ import request from 'supertest'; // Usado para simular requisições HTTP
 import express, { Express } from 'express';
 import ReviewController from '../public/src/controllers/ReviewController'; // Importe o controller
 
-// Criação de um app express para usar no supertest
+
 const app: Express = express();
 app.use(express.json());
 

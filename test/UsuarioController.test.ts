@@ -2,7 +2,6 @@ import request from 'supertest';
 import express, { Express } from 'express';
 import { UsuarioController } from '../public/src/controllers/UsuarioController';
 
-// Configurando o app Express para os testes
 const app: Express = express();
 app.use(express.json());
 

@@ -13,7 +13,6 @@ export class Review {
     private media!: number;
     private jogo!: Jogo;
     private usuario!: Usuario;
-    //private const curtida! = new Map<string, string>();
 
     constructor(idReview: string, idJogo: number, idUsuario: string, titulo: string, notaGrafico: number,
         notaJogabilidade: number, notaHistoria: number, texto: string) {

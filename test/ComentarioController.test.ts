@@ -2,7 +2,6 @@ import request from 'supertest';
 import express, { Express } from 'express';
 import { ComentarioController } from '../public/src/controllers/ComentarioController';
 
-// Configurando o app Express para os testes
 const app: Express = express();
 app.use(express.json());
 

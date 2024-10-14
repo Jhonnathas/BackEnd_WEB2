@@ -12,10 +12,6 @@ class ReviewController {
     public createReview(req: Request, res: Response): Response {
         const { idReview, idJogo, idUsuario, titulo, notaGrafico, notaJogabilidade, notaHistoria, texto} = req.body;
 
-        // Instanciando os objetos Jogo e Usuario (você provavelmente teria um serviço para buscá-los)
-        //const novoJogo = new Jogo(idJogo, jogo.nomeJogo, jogo.genero, jogo.anoLancamento, jogo.plataformas, jogo.descricao, jogo.media, jogo.desenvolvedor);
-        //const novoUsuario = new Usuario(usuario.id, usuario.nome, usuario.email, usuario.telefone, usuario.idade);
-
         // Criando a nova review
         const newReview = new Review(idReview, idJogo, idUsuario, titulo, notaGrafico, notaJogabilidade, notaHistoria, texto);
 
@@ -57,14 +53,7 @@ class ReviewController {
             return res.status(404).json({ message: 'Review não encontrada' });
         }
 
-        // Atualizando os campos da review
-        /*review.titulo = titulo || review.titulo;
-        review.texto = texto || review.texto;
-        review.nota = nota || review.nota;
-        review.notaGrafico = notaGrafico || review.notaGrafico;
-        review.notaJogabilidade = notaJogabilidade || review.notaJogabilidade;
-        review.notaHistoria = notaHistoria || review.notaHistoria;
-        review.curtidas = curtidas || review.curtidas;*/
+
 
         // Recalculando a média
         review.calculaMedia();

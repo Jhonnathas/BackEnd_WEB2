@@ -8,9 +8,6 @@ export class Jogo {
     private media: number;
     private mediasRegistradas = new Map <string, number>();
     private desenvolvedor: string;
-    //private mediaJogabilidade: number;
-    //private mediaGraficos: number;
-    //private mediaHistoria: number;
 
     constructor(id: number, nome: string, genero: string, anoLancamento: number, 
         plataformas: string, descricao: string, media: number, desenvolvedor: string) {
