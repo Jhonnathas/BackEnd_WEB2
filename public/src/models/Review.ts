@@ -3,21 +3,23 @@ import { Usuario } from './Usuario';
 
 export class Review {
     private idReview: string;
-    private jogo: Jogo;
-    private usuario: Usuario;
+    private idJogo: number;
+    private idUsuario: string;
     private titulo: string;
     private notaGrafico: number;
     private notaJogabilidade: number;
     private notaHistoria: number;
     private texto: string;
     private media!: number;
+    private jogo!: Jogo;
+    private usuario!: Usuario;
     //private const curtida! = new Map<string, string>();
 
-    constructor(idReview: string, jogo: Jogo, usuario: Usuario, titulo: string, notaGrafico: number,
+    constructor(idReview: string, idJogo: number, idUsuario: string, titulo: string, notaGrafico: number,
         notaJogabilidade: number, notaHistoria: number, texto: string) {
         this.idReview = idReview;
-        this.jogo = jogo;
-        this.usuario = usuario;
+        this.idJogo = idJogo;
+        this.idUsuario = idUsuario;
         this.titulo = titulo;
         this.notaGrafico = notaGrafico;
         this.notaJogabilidade = notaJogabilidade;
@@ -52,4 +54,7 @@ export class Review {
         return this.media;
     }
 
+    getJogoReview(): Jogo{
+        return this.jogo.getJogo(this.idJogo);
+    }
 }

@@ -10,14 +10,14 @@ class ReviewController {
     
     // Método para criar uma nova review (POST)
     public createReview(req: Request, res: Response): Response {
-        const { idReview, jogo, usuario, titulo, notaGrafico, notaJogabilidade, notaHistoria, texto} = req.body;
+        const { idReview, idJogo, idUsuario, titulo, notaGrafico, notaJogabilidade, notaHistoria, texto} = req.body;
 
         // Instanciando os objetos Jogo e Usuario (você provavelmente teria um serviço para buscá-los)
-        const novoJogo = new Jogo(jogo.idJogo, jogo.nomeJogo, jogo.genero, jogo.anoLancamento, jogo.plataformas, jogo.descricao, jogo.media, jogo.desenvolvedor);
-        const novoUsuario = new Usuario(usuario.id, usuario.nome, usuario.email, usuario.telefone, usuario.idade);
+        //const novoJogo = new Jogo(idJogo, jogo.nomeJogo, jogo.genero, jogo.anoLancamento, jogo.plataformas, jogo.descricao, jogo.media, jogo.desenvolvedor);
+        //const novoUsuario = new Usuario(usuario.id, usuario.nome, usuario.email, usuario.telefone, usuario.idade);
 
         // Criando a nova review
-        const newReview = new Review(idReview, novoJogo, novoUsuario, titulo, notaGrafico, notaJogabilidade, notaHistoria, texto);
+        const newReview = new Review(idReview, idJogo, idUsuario, titulo, notaGrafico, notaJogabilidade, notaHistoria, texto);
 
         // Calculando a média antes de salvar a review
         newReview.calculaMedia();

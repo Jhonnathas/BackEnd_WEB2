@@ -24,8 +24,12 @@ export class Jogo {
         this.desenvolvedor = desenvolvedor;
     }
 
-    getID(): number {
-        return this.idJogo;
+    getJogo(idJogo: number): Jogo {
+        if (idJogo == this.idJogo) {
+            return this;
+        } else {
+            throw new Error ("ID incopativel");
+        }
     }
 
     exibirDetalhes(): void {
